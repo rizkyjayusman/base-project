@@ -1,7 +1,7 @@
 package models
 
 import (
-	"example.com/base-project/common"
+	"example.com/base-project/common/utils"
 )
 
 type User struct {
@@ -12,9 +12,9 @@ type User struct {
 	PhoneNumber string `json:"phone_number"`
 }
 
-var sensitiveDataUtil = common.SensitiveDataUtil{}
+var sensitiveDataUtil = utils.SensitiveDataUtil{}
 
-func (u User) SensitiveData() common.SensitiveData {
+func (u User) SensitiveData() utils.SensitiveData {
 	res := new(User)
 	res.ID = u.ID
 	res.Email = sensitiveDataUtil.MaskValue(u.Email, 4)
