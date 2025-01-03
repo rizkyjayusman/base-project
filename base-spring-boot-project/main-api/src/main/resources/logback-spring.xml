@@ -1,0 +1,15 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<configuration>
+
+    <conversionRule conversionWord="requestId" converterClass="com.example.configurations.MDCRequestIdConverter"/>
+
+    <appender name = "STDOUT" class = "ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>[%d{yyyy-MM-dd'T'HH:mm:ss.sss'Z'}] %logger{10} [%t] [%L] [%-5p] %requestId- %m%n</pattern>
+        </encoder>
+    </appender>
+
+    <root level = "DEBUG">
+        <appender-ref ref = "STDOUT"/>
+    </root>
+</configuration>
